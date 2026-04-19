@@ -1,0 +1,15 @@
+SELECT * WHERE { ?s ?p ?o } LIMIT 10
+
+SELECT (COUNT(*) AS ?c) WHERE { ?s ?p ?o }
+
+SELECT ?s ?o WHERE { ?s <http://example.org/knows> ?o }
+
+SELECT ?s WHERE { ?s <http://example.org/type> <http://example.org/Person> }
+
+SELECT ?s ?age WHERE { ?s <http://example.org/type> <http://example.org/Person> . ?s <http://example.org/age> ?age }
+
+SELECT ?s ?o1 ?o2 WHERE { ?s <http://example.org/knows> ?o1 . ?s <http://example.org/age> ?o2 }
+
+SELECT * WHERE { ?r1 <http://example.org/knows> ?r2 . ?r1 <http://example.org/knows> ?r3 . ?r2 <http://example.org/knows> ?r3 }
+
+SELECT * WHERE { ?a <http://example.org/knows> ?b . ?b <http://example.org/type> ?t . ?a <http://example.org/type> ?t }
