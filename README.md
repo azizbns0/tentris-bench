@@ -3,6 +3,7 @@
 A SPARQL query benchmarking CLI for [Tentris](https://github.com/dice-group/tentris-research-project), written in C++17.
 
 ## Sample output
+```text
 tentris-bench v1.0
 Endpoint  : http://localhost:9080/sparql
 Queries   : queries/benchmark.sparql
@@ -16,8 +17,10 @@ Running query 5/8 [multi-join]... 0.39 ms,  3 rows
 Running query 6/8 [multi-join]... 0.38 ms,  3 rows
 Running query 7/8 [triangle]...   0.47 ms,  1 rows
 Running query 8/8 [triangle]...   0.47 ms,  3 rows
+
 ========== BENCHMARK REPORT ==========
 Class       Latency(ms)   Rows    Status
+------------------------------------------
 simple      0.62          9       OK
 simple      0.42          9       OK
 simple      0.34          3       OK
@@ -26,8 +29,9 @@ multi-join  0.39          3       OK
 multi-join  0.38          3       OK
 triangle    0.47          1       OK
 triangle    0.47          3       OK
+======================================
 CSV written to results.csv
-
+```
 ## Why I built this
 
 Tentris is built around two core innovations: the **hypertrie** index structure and **Worst-Case Optimal Joins (WCOJs)**.
